@@ -10,9 +10,11 @@ numpart=2048
 numnodes=16
 subgroup=128
 
+datadir="../MPAS-Model/data"
+
 python plot_global_hierarchical.py \
-  -m ../data/x1.655362.grid.nc \
-  -i ../data/x1.655362.graph.info.part.${numpart} \
+  -m ${datadir}/x1.655362.grid.nc \
+  -i ${datadir}/x1.655362.graph.info.part.${numpart} \
   -o mpas_direct_group_${projection}_${numpart}_s${subgroup}.png \
   -n ${numpart} \
   -p ${numnodes} \
@@ -23,7 +25,7 @@ python plot_global_hierarchical.py \
 exit 0
 
 python plot_global_hierarchical.py \
-  -m ../data/x1.655362.grid.nc \
+  -m ${datadir}/x1.655362.grid.nc \
   -i global_hierarchical.part.${numpart} \
   -o mpas_global_hierarchical_${projection}_${numpart}_s${subgroup}.png \
   -n ${numpart} \
@@ -33,8 +35,8 @@ python plot_global_hierarchical.py \
   --proj ${projection}
 
 python plot_global_hierarchical.py \
-  -m ../data/x1.655362.grid.nc \
-  -i ../data/x1.655362.graph.info.part.${numpart} \
+  -m ${datadir}/x1.655362.grid.nc \
+  -i ${datadir}/x1.655362.graph.info.part.${numpart} \
   -o mpas_direct_partition_${projection}_${numpart}_s${subgroup}.png \
   -n ${numpart} \
   -p ${numpart} \
